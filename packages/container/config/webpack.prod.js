@@ -11,7 +11,11 @@ const prodConfig = {
         //Name = the file that was created
         // Hash = the contents of the file
         // We do this for cache issues. (Remember the golden rules)
-        filename: '[name].[contenthash].js'
+        filename: '[name].[contenthash].js',
+        // publicPath - This is used any time some part of webpack tries to refer to a file that has been 'built' by webpack.
+        // Fixes - main.d8f4fed242ec71d19ba3.js:1 Uncaught SyntaxError: Unexpected token '<'
+        // The above "main.*.js" needs "/container/latest/" prepended to it.
+        publicPath: '/container/latest/'
     },
     plugins: [
         new ModuleFederationPlugin({
