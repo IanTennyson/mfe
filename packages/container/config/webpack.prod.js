@@ -25,7 +25,7 @@ const prodConfig = {
                 // Location of child app 'remoteEntry.js' MUST be known at build time.
                 // Question: What's with the '/marketing'
                 // Ans: We are ASSUMING that all child apps will be set to the same 'domain' with sub directories named after them.
-                marketing: `marketing@${domain}/marketing/remoteEntry.js`,
+                marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
             },
             shared: packageJson.dependencies
         })
